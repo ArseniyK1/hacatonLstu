@@ -9,40 +9,56 @@
             UniLecta
           </div>
           <div class="text-body-2 text-white q-mb-xs" style="margin-top: -7px">
-            версия {{ version }}
+            {{ !isRegistrRef ? "Регистрация" : "Авторизация" }}
           </div>
         </div>
       </div>
-      <q-form
-        class="row"
-        @submit="submitAuthentication"
-        ref="form"
-        tabindex="-1"
-        v-on:keyup.up="isUsingSuperPass = true"
-      >
-        <q-card class="q-pa-lg shadow-3 login-card" bordered="bordered ">
+      <q-form class="row" @submit="submitForm" ref="form" tabindex="-1">
+        <q-card class="q-pa-lg shadow-3 login-card" bordered="bordered">
           <q-card-section>
             <div class="q-gutter-md">
               <q-input
-                label="Логин"
+                label="Имя"
+                v-if="!isRegistrRef"
+                type="text"
+                v-model="name"
+                outlined
+                color="black"
+              >
+                <template v-slot:prepend>
+                  <q-icon name="badge" />
+                </template>
+              </q-input>
+              <q-input
+                :label="
+                  !isRegistrRef ? 'Придумайте логин' : 'Введите ваш логин'
+                "
+                outlined
                 lazy-rules="lazy-rules"
                 type="login"
                 v-model="login"
+                color="black"
               >
-                <template v-slot:append>
+                <template v-slot:prepend>
                   <q-icon name="face" />
                 </template>
               </q-input>
               <q-input
                 :type="showPassword ? 'text' : 'password'"
-                @keydown.enter.prevent="submitAuthentication"
+                @keydown.enter.prevent="submitForm"
                 label="Пароль"
                 v-model="password"
+                outlined
+                label-color="black"
+                color="black"
               >
+                <template v-slot:prepend>
+                  <q-icon name="password"></q-icon>
+                </template>
                 <template v-slot:append>
                   <q-icon
                     class="cursor-pointer"
-                    name="password"
+                    name="visibility_off"
                     @click="showPassword = !showPassword"
                   ></q-icon>
                 </template>
@@ -52,7 +68,7 @@
           <q-card-actions class="q-px-md text-primary">
             <q-btn
               class="gradient-btn full-width"
-              label="Войти"
+              :label="!isRegistrRef ? 'Зарегистрироваться' : 'Войти'"
               size="lg"
               type="submit"
               unelevated="unelevated"
@@ -64,50 +80,54 @@
   </q-page>
 </template>
 <script setup>
-import { useQuasar } from "quasar";
+import { Notify, useQuasar } from "quasar";
 import { computed, onMounted, ref } from "vue";
-import { version as ver } from "../../package.json";
 import { useAuthStore } from "stores/auth";
 import { useRouter } from "vue-router";
 
 const authStore = useAuthStore();
 const quasar = useQuasar();
 const router = useRouter();
-
 const form = ref(null);
 const login = ref("");
 const password = ref("");
 const showPassword = ref(false);
+const name = ref("");
+
+const isRegistrRef = ref(false);
+
 const passRules = [
   (val) => !!val || "Введите пароль",
   (val) => val.length >= 6 || "Пароль должен быть не менее 6 символов",
 ];
-const version = ref(ver);
 
 const profile = computed(() => authStore.getProfile);
 
-const submitAuthentication = async () => {
-  form.value.validate(true).then(async (outcome) => {
-    if (outcome) {
-      try {
+const submitForm = async () => {
+  form.value.validate(true).then(async () => {
+    try {
+      if (!isRegistrRef.value) {
+        await authStore.registration(name.value, login.value, password.value);
+      } else {
         await authStore.login(login.value, password.value);
-      } catch (e) {
-        console.error(e);
-      } finally {
       }
-      // console.debug(`Пользователь ${this.user.username} успешно вошел в программу`)
+    } catch (e) {
+      Notify.create({ message: "Error" });
     }
   });
 };
-onMounted(() => {
-  quasar.notify({ type: "positive", message: "Токен получен!" });
-});
+onMounted(() => (isRegistrRef.value = authStore.isAuthenticated));
 </script>
 
 <style scoped lang="scss">
 .login-card {
   opacity: 0.98;
-  width: 320px;
+
+  width: 50rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .login-page {

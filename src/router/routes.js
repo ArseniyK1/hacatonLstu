@@ -23,9 +23,9 @@ const routes = [
     name: "Auth",
     children: [
       {
-        name: "LoginPage",
+        name: "AuthPage",
         path: "",
-        component: () => import("../pages/LoginPage.vue"),
+        component: () => import("pages/AuthPage.vue"),
       },
     ],
   },

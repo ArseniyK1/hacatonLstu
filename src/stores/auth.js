@@ -6,8 +6,8 @@ export const useAuthStore = defineStore({
   id: "auth",
   state: () => ({
     token: localStorage.getItem("user-token") || "",
-    type: localStorage.getItem("user-type") || "guest",
-    userId: localStorage.getItem("user-id") || 0,
+    type: localStorage.getItem("user-login") || "test",
+    userName: localStorage.getItem("user-name") || "",
   }),
   getters: {
     isAuthenticated: (state) => !!state.token,
@@ -30,7 +30,7 @@ export const useAuthStore = defineStore({
         // const { access_token } = response;
         // console.log(access_token);
 
-        const test = localStorage.setItem("user-token", "token");
+        localStorage.setItem("user-token", "token");
 
         // localStorage.setItem("user-type", type);
         // localStorage.setItem("user-id", userid);
@@ -80,14 +80,24 @@ export const useAuthStore = defineStore({
     async logout() {
       localStorage.removeItem("user-token");
       // localStorage.removeItem("user-type");
-      localStorage.removeItem("user-id");
-      localStorage.removeItem("profile");
+      localStorage.removeItem("user-name");
+      localStorage.removeItem("user-login");
       // delete api.defaults.headers.common["Authorization"];
       this.token = "";
       // this.type = "guest";
-      this.userId = 0;
-      this.profile = {};
+      this.userName = 0;
       this.router.push("/login");
+    },
+    async registration(
+      name = "NameUser",
+      login = "testLogin",
+      password = "testPassword"
+    ) {
+      localStorage.setItem("user-token", password);
+      localStorage.setItem("user-login", login);
+      localStorage.setItem("user-name", name);
+      this.token = password;
+      this.router.push("/main");
     },
   },
 });
