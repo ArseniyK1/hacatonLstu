@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="fix: исправлена авторизация и регистрация - происходит все через микросервис">
+      <change afterPath="$PROJECT_DIR$/back/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/front/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/favicon-128x128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/favicon-96x96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quasar.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/quasar-logo-vertical.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/boot/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/boot/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/boot/notify-defaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EssentialLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainMenu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/LoginForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/RegistrForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/quasar.variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ErrorNotFound.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/IndexPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RegistrPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/store-flag.d.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2dk0Z9hFFdHXtvgQW7aFP11fqMo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/development/lstu-hacaton/back",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "D:\\development\\lstu-hacaton\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "D:\\webstorm\\WebStorm 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\lstu-hacaton\back" />
+      <recent name="D:\development\lstu-hacaton\src\components\auth" />
+      <recent name="D:\development\lstu-hacaton\src\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\development\lstu-hacaton\front" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="" />
+      <created>1710536822140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710536822140</updated>
+      <workItem from="1710536823087" duration="7993000" />
+      <workItem from="1710584943292" duration="14101000" />
+      <workItem from="1710608211097" duration="25000" />
+      <workItem from="1710608248812" duration="15000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: init project">
+      <option name="closed" value="true" />
+      <created>1710544725290</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710544725290</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: add mock auth">
+      <option name="closed" value="true" />
+      <created>1710592543673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710592543673</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: add mock auth">
+      <option name="closed" value="true" />
+      <created>1710595932810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710595932810</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: исправлена авторизация и регистрация - происходит все через микросервис">
+      <option name="closed" value="true" />
+      <created>1710608009509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710608009509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: init project" />
+    <MESSAGE value="feat: add mock auth" />
+    <MESSAGE value="fix: add mock auth" />
+    <MESSAGE value="fix: исправлена авторизация и регистрация - происходит все через микросервис" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: исправлена авторизация и регистрация - происходит все через микросервис" />
+  </component>
+</project>
