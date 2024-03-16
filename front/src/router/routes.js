@@ -29,6 +29,24 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/profile",
+    children: [
+      {
+        path: "",
+        component: () => import("../layouts/ProfileLayout.vue"),
+      },
+      {
+        path: "id/:id",
+        component: () => import("../layouts/ProfileLayout.vue"),
+      },
+      {
+        path: "create",
+        component: () => import("../layouts/ProfileLayout.vue"),
+        props: () => ({ createNewUser: true }),
+      },
+    ],
+  },
 
   // Always leave this as last one,
   // but you can also remove it

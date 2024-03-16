@@ -33,10 +33,10 @@
       <div>
         <q-separator></q-separator>
         <q-item clickable="clickable">
-          <q-item-section avatar="avatar">
+          <q-item-section avatar="avatar" @click="logoutHandler">
             <q-icon name="logout" color="white"></q-icon>
           </q-item-section>
-          <q-item-section @click="logoutHandler">
+          <q-item-section>
             <q-item-label class="text-white">Выход </q-item-label>
             <q-tooltip>Выйти из аккаунта</q-tooltip>
           </q-item-section>
@@ -70,10 +70,10 @@ const menu = [
     route: "/main/",
   },
   {
-    title: "Курс",
+    title: "Лекции",
     caption: "Страница с курсами",
     icon: "school",
-    route: "/course/",
+    route: "/lectures/",
   },
   {
     title: "Обьявления",

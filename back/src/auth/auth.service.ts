@@ -30,6 +30,7 @@ export class AuthService {
       verified: user.verified,
       banned: user.banned,
       role: role.value,
+      user: user,
     };
     return {
       access_token: await this.jwtService.signAsync(payload),

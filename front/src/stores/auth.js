@@ -9,6 +9,8 @@ export const useAuthStore = defineStore({
     token: localStorage.getItem("user-token") || "",
     type: localStorage.getItem("user-login") || "test",
     userName: localStorage.getItem("user-name") || "",
+    profile: localStorage.getItem("user-profile") || "",
+    roles: localStorage.getItem("user-role") || "",
   }),
   getters: {
     isAuthenticated: (state) => !!state.token,
@@ -32,8 +34,6 @@ export const useAuthStore = defineStore({
 
         localStorage.setItem("user-token", access_token);
 
-        // localStorage.setItem("user-type", type);
-        // localStorage.setItem("user-id", userid);
         api.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
         this.token = access_token;
 
@@ -58,14 +58,15 @@ export const useAuthStore = defineStore({
     async loadProfile() {
       try {
         const { data } = await api({
-          url: `/api/v1/profile`,
+          url: `http://localhost:8712/api/auth/profile`,
           method: "get",
         });
-        if (data) {
-          localStorage.setItem("profile", JSON.stringify(data));
-          this.profile = data;
-        }
-        return data;
+        const _data = { ...data };
+        localStorage.setItem("user-role", _data.role);
+        localStorage.setItem("user-profile", JSON.stringify(_data));
+        console.log(_data);
+        this.roles = _data.role;
+        return _data;
       } catch (e) {
         Notify.create({
           type: "negative",
@@ -78,16 +79,22 @@ export const useAuthStore = defineStore({
       localStorage.removeItem("user-token");
       localStorage.removeItem("user-name");
       localStorage.removeItem("user-login");
+      localStorage.removeItem("user-role");
+      localStorage.removeItem("user-profile");
       delete api.defaults.headers.common["Authorization"];
       this.token = "";
       this.router.push("/login");
     },
     async registration(name, login, password, isTeacher) {
-      const response = await axios.post("http://localhost:8712/api/user", {
-        login: login,
-        first_name: name || null,
-        password,
-        isTeacher,
+      const response = await api({
+        url: "http://localhost:8712/api/user",
+        method: "post",
+        data: {
+          login: login,
+          first_name: name || null,
+          password,
+          isTeacher,
+        },
       });
       const { data } = response;
 
