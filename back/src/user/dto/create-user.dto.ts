@@ -72,5 +72,5 @@ export class CreateUserDto {
     example: true,
     description: 'Хочет ли пользователь зарегистрироваться как юрист',
   })
-  isLawyer?: boolean;
+  isTeacher?: boolean;
 }

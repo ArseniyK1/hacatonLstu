@@ -3,13 +3,15 @@ import { RolesService } from './roles.service';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { RoleByValueDto } from './dto/RoleByValue.dto';
-
+import { Public } from '../auth/public.decorator';
+//
 @ApiTags('Roles')
 @Controller('roles')
 export class RolesController {
   constructor(private readonly rolesService: RolesService) {}
 
   @ApiOperation({ summary: 'Создаение роли' })
+  @Public()
   @Post()
   async createRole(@Body() createRoleDto: CreateRoleDto) {
     return await this.rolesService.createRole(createRoleDto);

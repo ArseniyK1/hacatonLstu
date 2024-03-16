@@ -22,7 +22,7 @@ export const useAuthStore = defineStore({
       try {
         Loading.show();
         const { data } = await api({
-          url: "http://localhost:7000/api/auth/login",
+          url: "http://localhost:8712/api/auth/login",
           method: "post",
           data: { username: login, password },
         });
@@ -83,7 +83,7 @@ export const useAuthStore = defineStore({
       this.router.push("/login");
     },
     async registration(name, login, password) {
-      const response = await axios.post("http://localhost:7000/api/user", {
+      const response = await axios.post("http://localhost:8712/api/user", {
         login: login,
         first_name: name || null,
         password,

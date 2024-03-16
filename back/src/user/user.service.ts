@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { RolesService } from '../roles/roles.service';
-import { compare, genSalt, hash } from 'bcrypt';
+import { genSalt, hash } from 'bcrypt';
 import { ByLoginDto } from './dto/by-login.dto';
 import { InfoAboutLawyerDto } from './dto/InfoAboutLawyer.dto';
 
@@ -39,8 +39,8 @@ export class UserService {
         password: hashPassword,
       });
 
-      if (!!createUserDto.isLawyer) {
-        const role = await this.roleService.getRoleByValue('LAWYER');
+      if (!!createUserDto.isTeacher) {
+        const role = await this.roleService.getRoleByValue('TEACHER');
         await user.$set('roles', [role.id]);
       } else {
         const role = await this.roleService.getRoleByValue('USER');
