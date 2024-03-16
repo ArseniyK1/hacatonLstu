@@ -1,6 +1,7 @@
 import { api } from "boot/axios";
 import { defineStore } from "pinia";
 import { Loading, Notify } from "quasar";
+import axios from "axios";
 
 export const useAuthStore = defineStore({
   id: "auth",
@@ -20,26 +21,22 @@ export const useAuthStore = defineStore({
     async login(login, password) {
       try {
         Loading.show();
-        // const response = await api({
-        //   url: "http://localhost:7000/api/auth/login",
-        //   method: "post",
-        //   data: { username: login, password },
-        // });
-        // if (!response.access_token) throw new Error("Ошибка авторизации");
-        // console.log(response);
-        // const { access_token } = response;
-        // console.log(access_token);
+        const { data } = await api({
+          url: "http://localhost:7000/api/auth/login",
+          method: "post",
+          data: { username: login, password },
+        });
+        if (!data?.access_token) throw new Error("Ошибка авторизации");
+        // console.log(data);
+        const { access_token } = data;
 
-        localStorage.setItem("user-token", "token");
+        localStorage.setItem("user-token", access_token);
 
         // localStorage.setItem("user-type", type);
         // localStorage.setItem("user-id", userid);
-        // api.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
-        this.token = "token";
-        // this.type = type;
-        // this.userId = userid;
-        //
-        // const profile = await this.loadProfile();
+        api.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
+        this.token = access_token;
+
         this.router.push("/main");
         Notify.create({
           message: "Вы авторизованы",
@@ -51,7 +48,7 @@ export const useAuthStore = defineStore({
           message: "Ошибка авторизации",
           caption: e?.message || "",
           type: "negative",
-          color: "primary",
+          color: "secondary",
         });
         console.error(e);
       } finally {
@@ -72,31 +69,31 @@ export const useAuthStore = defineStore({
       } catch (e) {
         Notify.create({
           type: "negative",
-          color: "primary",
+          color: "secondary",
           message: "Ошибка загрузки профиля",
         });
       }
     },
     async logout() {
       localStorage.removeItem("user-token");
-      // localStorage.removeItem("user-type");
       localStorage.removeItem("user-name");
       localStorage.removeItem("user-login");
-      // delete api.defaults.headers.common["Authorization"];
+      delete api.defaults.headers.common["Authorization"];
       this.token = "";
-      // this.type = "guest";
-      this.userName = 0;
       this.router.push("/login");
     },
-    async registration(
-      name = "NameUser",
-      login = "testLogin",
-      password = "testPassword"
-    ) {
-      localStorage.setItem("user-token", password);
-      localStorage.setItem("user-login", login);
-      localStorage.setItem("user-name", name);
-      this.token = password;
+    async registration(name, login, password) {
+      const response = await axios.post("http://localhost:7000/api/user", {
+        login: login,
+        first_name: name || null,
+        password,
+      });
+      const { data } = response;
+
+      localStorage.setItem("user-token", data?.user?.password);
+      localStorage.setItem("user-login", data?.user?.login);
+      localStorage.setItem("user-name", data?.user?.first_name);
+      this.token = data?.user?.password;
       this.router.push("/main");
     },
   },
