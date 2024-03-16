@@ -82,11 +82,12 @@ export const useAuthStore = defineStore({
       this.token = "";
       this.router.push("/login");
     },
-    async registration(name, login, password) {
+    async registration(name, login, password, isTeacher) {
       const response = await axios.post("http://localhost:8712/api/user", {
         login: login,
         first_name: name || null,
         password,
+        isTeacher,
       });
       const { data } = response;
 

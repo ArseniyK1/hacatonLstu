@@ -47,6 +47,11 @@
               ></q-icon>
             </template>
           </q-input>
+          <q-checkbox
+            v-model="isTeacher"
+            label="Зарегистрироваться как преподаватель"
+            color="accent"
+          />
         </div>
       </q-card-section>
       <q-card-actions class="q-px-md text-primary">
@@ -75,6 +80,7 @@ const login = ref("");
 const name = ref("");
 const password = ref("");
 const showPassword = ref(false);
+const isTeacher = ref(false);
 
 const passRules = [
   (val) => !!val || "Введите пароль",
@@ -86,7 +92,12 @@ const profile = computed(() => authStore.getProfile);
 const submitForm = async () => {
   form.value.validate(true).then(async () => {
     try {
-      await authStore.registration(name.value, login.value, password.value);
+      await authStore.registration(
+        name.value,
+        login.value,
+        password.value,
+        isTeacher.value
+      );
     } catch (e) {
       Notify.create({ message: "Error" });
     }

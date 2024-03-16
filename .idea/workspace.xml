@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="feat(back): добавлен микросервис авторизации и регистрации">
+    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="feat(back): исправлены роли">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/auth/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/auth/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/auth/public.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/public.decorator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/db/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/db/database.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/return-object/reqGuards.return-object.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/return-object/reqGuards.return-object.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/decorators/roles.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/decorators/roles.decorator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/dto/RoleByValue.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/dto/RoleByValue.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/dto/create-role.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/dto/create-role.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/entities/roles.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/entities/roles.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/guards/roles.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/guards/roles.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/roles.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/roles.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/roles.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/roles.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/roles/roles.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/roles/roles.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/dto/create-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/entities/UserRoles.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/entities/UserRoles.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/entities/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/user.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/auth/RegistrForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/auth/RegistrForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/stores/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/stores/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +113,7 @@
       <workItem from="1710608211097" duration="25000" />
       <workItem from="1710608248812" duration="211000" />
       <workItem from="1710608484144" duration="4000" />
-      <workItem from="1710608519928" duration="2824000" />
+      <workItem from="1710608519928" duration="5201000" />
     </task>
     <task id="LOCAL-00001" summary="feat: init project">
       <option name="closed" value="true" />
@@ -193,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710610090801</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat(back): исправлены роли">
+      <option name="closed" value="true" />
+      <created>1710611680421</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710611680421</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +192,7 @@
     <MESSAGE value="fix: исправлена авторизация и регистрация - происходит все через микросервис" />
     <MESSAGE value="fix: изменена структура папок" />
     <MESSAGE value="feat(back): добавлен микросервис авторизации и регистрации" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(back): добавлен микросервис авторизации и регистрации" />
+    <MESSAGE value="feat(back): исправлены роли" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(back): исправлены роли" />
   </component>
 </project>
