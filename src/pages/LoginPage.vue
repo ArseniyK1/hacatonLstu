@@ -65,9 +65,9 @@
 </template>
 <script setup>
 import { useQuasar } from "quasar";
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { version as ver } from "../../package.json";
-import { useAuthStore } from "../stores/auth";
+import { useAuthStore } from "stores/auth";
 import { useRouter } from "vue-router";
 
 const authStore = useAuthStore();
@@ -99,6 +99,9 @@ const submitAuthentication = async () => {
     }
   });
 };
+onMounted(() => {
+  quasar.notify({ type: "positive", message: "Токен получен!" });
+});
 </script>
 
 <style scoped lang="scss">

@@ -36,11 +36,9 @@
           <q-item-section avatar="avatar">
             <q-icon name="logout" color="white"></q-icon>
           </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-white"
-              >Выход
-              <q-tooltip>Выйти из программы</q-tooltip>
-            </q-item-label>
+          <q-item-section @click="logoutHandler">
+            <q-item-label class="text-white">Выход </q-item-label>
+            <q-tooltip>Выйти из аккаунта</q-tooltip>
           </q-item-section>
         </q-item>
       </div>
@@ -90,6 +88,10 @@ const menu = [
     route: "/objects/",
   },
 ];
+
+const logoutHandler = () => {
+  authStore.logout();
+};
 </script>
 
 <style>

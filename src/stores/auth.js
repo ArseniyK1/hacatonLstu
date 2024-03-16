@@ -20,23 +20,25 @@ export const useAuthStore = defineStore({
     async login(login, password) {
       try {
         Loading.show();
-        const response = await api({
-          url: "http://localhost:7000/api/auth/login",
-          method: "post",
-          data: { username: login, password },
-        });
-        if (!response.access_token) throw new Error("Ошибка авторизации");
-        console.log(response);
-        //Блок мутации
-        const { access_token } = response;
-        localStorage.setItem("user-token", token);
+        // const response = await api({
+        //   url: "http://localhost:7000/api/auth/login",
+        //   method: "post",
+        //   data: { username: login, password },
+        // });
+        // if (!response.access_token) throw new Error("Ошибка авторизации");
+        // console.log(response);
+        // const { access_token } = response;
+        // console.log(access_token);
+
+        const test = localStorage.setItem("user-token", "token");
+
         // localStorage.setItem("user-type", type);
         // localStorage.setItem("user-id", userid);
-        api.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
-        this.token = token;
+        // api.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
+        this.token = "token";
         // this.type = type;
         // this.userId = userid;
-
+        //
         // const profile = await this.loadProfile();
         this.router.push("/main");
         Notify.create({
@@ -77,14 +79,13 @@ export const useAuthStore = defineStore({
     },
     async logout() {
       localStorage.removeItem("user-token");
-      localStorage.removeItem("user-type");
+      // localStorage.removeItem("user-type");
       localStorage.removeItem("user-id");
       localStorage.removeItem("profile");
-      delete api.defaults.headers.common["Authorization"];
+      // delete api.defaults.headers.common["Authorization"];
       this.token = "";
-      this.type = "guest";
+      // this.type = "guest";
       this.userId = 0;
-      this.ability = "[]";
       this.profile = {};
       this.router.push("/login");
     },
