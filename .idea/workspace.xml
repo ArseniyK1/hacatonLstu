@@ -4,50 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="fix: исправлена авторизация и регистрация - происходит все через микросервис">
-      <change afterPath="$PROJECT_DIR$/back/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/front/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.vscode/extensions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/favicon-128x128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/favicon-96x96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quasar.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/quasar-logo-vertical.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/boot/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/boot/axios.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/boot/notify-defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EssentialLink.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainMenu.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainPage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/LoginForm.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/RegistrForm.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/quasar.variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ErrorNotFound.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/IndexPage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegistrPage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/store-flag.d.ts" beforeDir="false" />
+    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="fix: изменена структура папок">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/back/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,15 +34,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "ignore_missing_gitignore": "true",
     "last_opened_file_path": "D:/development/lstu-hacaton/back",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "D:\\development\\lstu-hacaton\\node_modules\\prettier",
+    "prettierjs.PrettierConfiguration.Package": "D:\\development\\lstu-hacaton\\back\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "D:\\webstorm\\WebStorm 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "D:\\development\\lstu-hacaton\\back\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -97,7 +57,17 @@
       <recent name="D:\development\lstu-hacaton\front" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start:dev">
+    <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/front/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -108,8 +78,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/back/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -125,7 +107,9 @@
       <workItem from="1710536823087" duration="7993000" />
       <workItem from="1710584943292" duration="14101000" />
       <workItem from="1710608211097" duration="25000" />
-      <workItem from="1710608248812" duration="15000" />
+      <workItem from="1710608248812" duration="211000" />
+      <workItem from="1710608484144" duration="4000" />
+      <workItem from="1710608519928" duration="1281000" />
     </task>
     <task id="LOCAL-00001" summary="feat: init project">
       <option name="closed" value="true" />
@@ -159,7 +143,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710608009509</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: изменена структура папок">
+      <option name="closed" value="true" />
+      <created>1710608284185</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710608284185</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: изменена структура папок">
+      <option name="closed" value="true" />
+      <created>1710608304939</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710608304939</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +170,7 @@
     <MESSAGE value="feat: add mock auth" />
     <MESSAGE value="fix: add mock auth" />
     <MESSAGE value="fix: исправлена авторизация и регистрация - происходит все через микросервис" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: исправлена авторизация и регистрация - происходит все через микросервис" />
+    <MESSAGE value="fix: изменена структура папок" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: изменена структура папок" />
   </component>
 </project>
