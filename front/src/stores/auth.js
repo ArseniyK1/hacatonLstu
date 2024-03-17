@@ -18,6 +18,7 @@ export const useAuthStore = defineStore({
     getToken: (state) => state.token,
     getUserId: (state) => state.userId,
     getProfile: (state) => state.profile,
+    getRole: (state) => state.roles,
   },
   actions: {
     async login(login, password) {
@@ -64,7 +65,6 @@ export const useAuthStore = defineStore({
         const _data = { ...data };
         localStorage.setItem("user-role", _data.role);
         localStorage.setItem("user-profile", JSON.stringify(_data));
-        console.log(_data);
         this.roles = _data.role;
         return _data;
       } catch (e) {

@@ -1,15 +1,8 @@
 <template>
-  <!--  <div class="full-width full-height">asdasd</div>-->
-  <q-page class="qpage">Главная страница</q-page>
+  <div class="text-h3 text-accent q-mt-none q-pt-none q-ml-md q-mb-md">
+    Главная страница
+  </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-
-const userData = ref([]);
-</script>
-<style scoped>
-.qpage {
-  height: calc(100vh - 400px) !important;
-}
-</style>
+<script setup></script>
+<style></style>

@@ -44,6 +44,13 @@
               v-model="profile.role"
               readonly
             ></q-input>
+            <q-input
+              class="q-ml-xs"
+              color="secondary"
+              label="Группа *"
+              v-model="profile.group"
+              readonly
+            ></q-input>
           </div>
         </div>
         <q-separator class="q-mt-md"></q-separator>
@@ -97,6 +104,7 @@ const profile = ref({
   first_name: "",
   role: "",
   login: "",
+  group: "",
 });
 
 const changeUserData = () => {};
@@ -153,6 +161,7 @@ onMounted(async () => {
   profile.value.first_name = res.user.first_name;
   profile.value.middle_name = res.user.middle_name;
   profile.value.second_name = res.user.second_name;
+  profile.value.group = res.user.group;
 
   // if (!!router.currentRoute.value.params.id)
   //   profile.value = await userStore.getUserById(

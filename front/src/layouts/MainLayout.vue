@@ -27,19 +27,11 @@
       <main-menu :full="fullWidthMenu" :is-mobile="isMobile" />
     </q-drawer>
 
-    <q-page-container style="background: #e6ebe0">
+    <q-page-container>
       <div :style="isMobile ? '' : 'padding-left: 57px'">
-        <q-page-container style="background: #e6ebe0">
+        <q-page-container>
           <router-view v-slot="{ Component }">
-            <transition
-              :duration="100"
-              appear="appear"
-              enter-active-class="animated fadeIn"
-              leave-active-class="animated fadeOut"
-              mode="out-in"
-            >
-              <component :is="Component"></component>
-            </transition>
+            <component :is="Component"></component>
           </router-view>
         </q-page-container>
       </div>
@@ -70,5 +62,6 @@ onMounted(async () => {
     showMenu.value = false;
     fullWidthMenu.value = true;
   }
+  await authStore.loadProfile();
 });
 </script>

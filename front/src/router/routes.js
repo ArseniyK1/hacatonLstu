@@ -15,6 +15,21 @@ const routes = [
         name: "MainPage",
         component: () => import("../components/MainPage.vue"),
       },
+      {
+        path: "/notify",
+        name: "NotifyPage",
+        component: () => import("../pages/NotifyPage.vue"),
+      },
+      {
+        path: "/lectures",
+        name: "LecturesPage",
+        component: () => import("../pages/LecturesPage.vue"),
+      },
+      {
+        path: "/objects",
+        name: "ObjectsPage",
+        component: () => import("../pages/ObjectsPage.vue"),
+      },
     ],
   },
   {

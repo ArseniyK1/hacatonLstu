@@ -73,8 +73,8 @@
           transition-hide="slide-up"
           transition-show="slide-down"
         >
-          <q-list dense="dense">
-            <q-item @click="goToProfile" clickable="clickable" v-close-popup>
+          <q-list bordered separator style="max-width: 318px">
+            <q-item @click="goToProfile" clickable="clickable" v-ripple>
               <q-item-section avatar="avatar">
                 <q-icon color="secondary" name="user"></q-icon>
               </q-item-section>
@@ -82,7 +82,7 @@
             </q-item>
             <q-separator></q-separator>
             <q-separator></q-separator>
-            <q-item @click="logout" clickable="clickable" v-close-popup>
+            <q-item @click="logout" clickable="clickable" v-ripple>
               <q-item-section avatar="avatar">
                 <q-icon
                   color="secondary"
@@ -178,7 +178,6 @@ onMounted(async () => {
     emits("update:fullWidthMenu", false);
   }
   search.value = router.currentRoute.value.query.search || "";
-  await authStore.loadProfile();
 });
 </script>
 

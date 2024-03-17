@@ -60,8 +60,11 @@ export class User extends Model<User, UserCreationAttrs> {
   @Column({ type: DataType.DATE })
   date_of_birth: Date;
 
-  @Column({ type: DataType.STRING, unique: true })
+  @Column({ type: DataType.STRING })
   contact_email: string;
+
+  @Column({ type: DataType.STRING })
+  group: string;
 
   @Column({
     type: DataType.BOOLEAN,
