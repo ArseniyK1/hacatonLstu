@@ -3,16 +3,14 @@
     Обьявления
   </div>
   <div class="row q-col-gutter-md">
-    <div class="col-6">
+    <div class="col-6" v-for="item in notifys" v-bind:key="item.id">
       <q-card class="my-card" flat>
         <q-card-section horizontal>
           <q-card-section class="q-pt-xs">
             <div class="text-overline">Обьявление</div>
-            <div class="text-h5 q-mt-sm q-mb-xs">Опрос</div>
+            <div class="text-h5 q-mt-sm q-mb-xs">{{ item.title }}</div>
             <div class="text-caption text-black">
-              Уважаемые студенты! Просим пройти опрос “Мониторинг
-              удовлетворенности качеством образовательного процесса”. Опрос
-              анонимный.
+              {{ item.description }}
             </div>
           </q-card-section>
 
@@ -28,81 +26,8 @@
 
         <q-card-actions>
           <q-btn flat>
-            <q-icon name="event" class="q-mr-sm"></q-icon> ДО 7:30 ПО МСК</q-btn
-          >
-          <q-btn square color="info" icon="checklist">Прочитал!</q-btn>
-        </q-card-actions>
-      </q-card>
-    </div>
-    <div class="col-6">
-      <q-card class="my-card" flat bordered>
-        <q-card-section horizontal>
-          <q-card-section class="q-pt-xs">
-            <div class="text-overline">Обьявление</div>
-            <div class="text-h5 q-mt-sm q-mb-xs">
-              Молодежь современной России
-            </div>
-            <div class="text-black">
-              Просим принять участие во Всероссийском опросе “Молодежь
-              современной России: мой взгляд на риски и возможности”. Обращаем
-              внимание, что данный опрос полностью анонимный и не требует
-              предоставления персональных данных. Сроки проведения
-              Всероссийского опроса - до 31 января 2024 года. Также поделитесь
-              ссылкой с родителями и предложите пройти опрос. Благодарим за
-              участие.
-            </div>
-          </q-card-section>
-
-          <q-card-section class="col-5 flex flex-center">
-            <q-img
-              class="rounded-borders"
-              src="https://cdn.quasar.dev/img/parallax2.jpg"
-            />
-          </q-card-section>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-actions>
-          <q-btn flat>
-            <q-icon name="event" class="q-mr-sm"></q-icon> ДО 7:30 ПО МСК</q-btn
-          >
-          <q-btn square color="info" icon="checklist">Прочитал!</q-btn>
-        </q-card-actions>
-      </q-card>
-    </div>
-    <div class="col-6">
-      <q-card class="my-card" flat bordered>
-        <q-card-section horizontal>
-          <q-card-section class="q-pt-xs">
-            <div class="text-overline">Обьявление</div>
-            <div class="text-h5 q-mt-sm q-mb-xs">
-              Молодежь современной России
-            </div>
-            <div class="text-black">
-              Просим принять участие во Всероссийском опросе “Молодежь
-              современной России: мой взгляд на риски и возможности”. Обращаем
-              внимание, что данный опрос полностью анонимный и не требует
-              предоставления персональных данных. Сроки проведения
-              Всероссийского опроса - до 31 января 2024 года. Также поделитесь
-              ссылкой с родителями и предложите пройти опрос. Благодарим за
-              участие.
-            </div>
-          </q-card-section>
-
-          <q-card-section class="col-5 flex flex-center">
-            <q-img
-              class="rounded-borders"
-              src="https://cdn.quasar.dev/img/parallax2.jpg"
-            />
-          </q-card-section>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-actions>
-          <q-btn flat>
-            <q-icon name="event" class="q-mr-sm"></q-icon> ДО 7:30 ПО МСК</q-btn
+            <q-icon name="event" class="q-mr-sm"></q-icon> ДО
+            {{ item.datetime }}0 ПО МСК</q-btn
           >
           <q-btn square color="info" icon="checklist">Прочитал!</q-btn>
         </q-card-actions>
@@ -147,7 +72,7 @@
 
       <q-input
         filled
-        v-model="name"
+        v-model="desc"
         label="Описание обьявления *"
         lazy-rules
         square
@@ -177,49 +102,43 @@ import { useQuasar } from "quasar";
 const authStore = useAuthStore();
 const quasar = useQuasar();
 
-const notifys = [
+const notifys = ref([
   {
     title: "Опрос",
+    id: 1,
     description:
       "Уважаемые студенты! Просим пройти опрос “Мониторинг удовлетворенности качеством образовательного процесса”. Опрос анонимный.",
     datetime: "7:30",
   },
   {
     title: "Молодежь современной России",
+    id: 2,
     description:
       "Просим принять участие во Всероссийском опросе “Молодежь современной России: мой взгляд на риски и возможности”. Обращаем внимание, что данный опрос полностью анонимный и не требует предоставления персональных данных. Сроки проведения Всероссийского опроса - до 31 января 2024 года. Также поделитесь ссылкой с родителями и предложите пройти опрос. Благодарим заучастие.",
     datetime: "12:30",
   },
   {
     title: "Хакатон 2024",
+    id: 3,
     description: "Просим принять участие в “Хакатон в политехе 2024”",
     datetime: "16:30",
   },
-];
+]);
 
 const isTeacher = ref("USER");
 const name = ref(null);
+const desc = ref(null);
 const age = ref(null);
 const accept = ref(false);
-const date = ref("2019/02/01");
+const date = ref(null);
 const isTeacherComputed = computed(() => isTeacher.value);
 
 const onSubmit = () => {
-  if (accept.value !== true) {
-    quasar.notify({
-      color: "red-5",
-      textColor: "white",
-      icon: "warning",
-      message: "You need to accept the license and terms first",
-    });
-  } else {
-    quasar.notify({
-      color: "green-4",
-      textColor: "white",
-      icon: "cloud_done",
-      message: "Submitted",
-    });
-  }
+  notifys.value.push({
+    title: name.value,
+    description: desc.value,
+    datetime: String(date.value),
+  });
 };
 const onReset = () => {
   name.value = null;

@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="feat: отображение данных о пользователе на фронте + токен летит в каждый запрос">
-      <change afterPath="$PROJECT_DIR$/front/src/pages/LecturesPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/pages/NotifyPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/pages/ObjectsPage.vue" afterDir="false" />
+    <list default="true" id="c937601d-c1f1-4205-81e3-41e9145411c9" name="Changes" comment="feat: страница с обьявлениями">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/user/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/user/entities/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/MainHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/MainHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/MainPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/MainPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/layouts/MainLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/layouts/ProfileLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/layouts/ProfileLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/router/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/stores/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/stores/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/NotifyPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/NotifyPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +114,7 @@
       <workItem from="1710608484144" duration="4000" />
       <workItem from="1710608519928" duration="17755000" />
       <workItem from="1710629556203" duration="138000" />
-      <workItem from="1710665301565" duration="6145000" />
+      <workItem from="1710665301565" duration="6474000" />
     </task>
     <task id="LOCAL-00001" summary="feat: init project">
       <option name="closed" value="true" />
@@ -205,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710629226486</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: страница с обьявлениями">
+      <option name="closed" value="true" />
+      <created>1710672556840</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710672556840</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +220,7 @@
     <MESSAGE value="feat(back): исправлены роли" />
     <MESSAGE value="feat(front): регистрация как преподаватель" />
     <MESSAGE value="feat: отображение данных о пользователе на фронте + токен летит в каждый запрос" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: отображение данных о пользователе на фронте + токен летит в каждый запрос" />
+    <MESSAGE value="feat: страница с обьявлениями" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: страница с обьявлениями" />
   </component>
 </project>
